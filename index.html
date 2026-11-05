@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Votre invitation de mariage — DELYART</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@0;1&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--creme:#f6efe4;--terra:#b5533c;--terra-d:#984331;--brun:#3b1d1a;--or:#b8935a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Jost',sans-serif;background:var(--creme);color:#4a2f2a;line-height:1.55;padding:1.4rem 1.2rem 4rem}
+.wrap{max-width:560px;margin:0 auto}
+header{text-align:center;padding:1.5rem 0 1rem}
+.brand{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or)}
+h1{font-family:'Bodoni Moda',serif;font-weight:400;color:var(--terra);font-size:1.9rem;margin:.4rem 0}
+header p{font-size:.95rem}
+.bar{height:5px;background:#e6d8c2;border-radius:9px;margin:1.2rem 0;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--terra);transition:width .4s}
+fieldset{border:0;background:#fffaf1;border-radius:16px;padding:1.2rem;margin-bottom:1rem;box-shadow:0 10px 24px -20px rgba(59,29,26,.6)}
+legend{display:none}
+label.q,.q{display:block;font-family:'Bodoni Moda',serif;font-size:1.08rem;color:var(--brun);margin-bottom:.2rem}
+.help{font-size:.82rem;color:#8a6d63;margin-bottom:.6rem}
+input[type=text],input[type=date],input[type=tel],textarea,select{width:100%;font:inherit;padding:.75rem .8rem;border:1px solid #dccbb2;border-radius:10px;background:#fff;color:#3b1d1a}
+textarea{min-height:84px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--terra);outline-offset:1px}
+.opts{display:flex;flex-wrap:wrap;gap:.5rem}
+.opts label{cursor:pointer}
+.opts input{position:absolute;opacity:0}
+.opts span{display:inline-block;padding:.5rem .9rem;border:1px solid #dccbb2;border-radius:999px;background:#fff;font-size:.9rem;transition:.2s}
+.opts input:checked+span{background:var(--terra);color:#fff;border-color:var(--terra)}
+.opts input:focus-visible+span{outline:2px solid var(--brun)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+button{width:100%;font:inherit;font-weight:500;letter-spacing:.08em;text-transform:uppercase;font-size:.85rem;background:var(--terra);color:#fff;border:0;border-radius:999px;padding:1rem;cursor:pointer;margin-top:.5rem}
+button:hover{background:var(--terra-d)}
+button.ghost{background:transparent;color:var(--terra);border:1px solid var(--terra)}
+.note{font-size:.82rem;text-align:center;margin-top:.8rem;color:#8a6d63}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="brand">DELYART</p>
+  <h1>Votre invitation de mariage</h1>
+  <p>12 petites questions pour créer un site qui vous ressemble. Cela prend 4 minutes. Répondez comme vous pouvez, nous préciserons ensemble.</p>
+</header>
+<div class="bar"><i id="bar"></i></div>
+
+<form id="f">
+<fieldset><label class="q" for="p1">1. Vos prénoms</label>
+  <div class="row"><input type="text" id="p1" placeholder="Prénom 1" required><input type="text" id="p2" placeholder="Prénom 2" required></div></fieldset>
+
+<fieldset><span class="q">2. Le style de votre mariage</span><p class="help">Vous pouvez en choisir plusieurs.</p>
+  <div class="opts" data-name="style">
+  <label><input type="checkbox" value="Traditionnel"><span>Traditionnel</span></label>
+  <label><input type="checkbox" value="Moderne"><span>Moderne</span></label>
+  <label><input type="checkbox" value="Chic et élégant"><span>Chic et élégant</span></label>
+  <label><input type="checkbox" value="Champêtre / nature"><span>Champêtre / nature</span></label>
+  <label><input type="checkbox" value="Coloré et festif"><span>Coloré et festif</span></label></div>
+  <p class="help" style="margin-top:.8rem">Aucun choix ne vous correspond ? Décrivez avec vos mots le style que vous imaginez :</p>
+  <textarea id="styleLibre" placeholder="Ex : un mariage bohème, avec beaucoup de fleurs et un esprit familial…"></textarea></fieldset>
+
+<fieldset><label class="q" for="couleurs">3. Vos couleurs et la tenue</label><p class="help">Jusqu'à 3 couleurs pour la tenue et la décoration. Elles s'affichent sur le site. Exemple : bordeaux, or et crème.</p>
+  <input type="text" id="couleurs">
+  <p class="help" style="margin-top:.8rem">Un mot pour vos invités sur la tenue (facultatif) :</p>
+  <input type="text" id="tenue" placeholder="Ex : Élégance africaine, pagne bienvenu"></fieldset>
+
+<fieldset><span class="q">4. Photos et faire-part</span><p class="help">La photo du couple s'affiche en grand en haut du site. Envoyez-la-nous sur WhatsApp, de préférence en portrait et bien éclairée.</p>
+  <div class="opts" data-name="photo" data-single="1">
+  <label><input type="checkbox" value="J'envoie une photo du couple"><span>J'envoie une photo</span></label>
+  <label><input type="checkbox" value="Pas de photo, on choisit ensemble"><span>Pas de photo</span></label></div>
+  <p class="help" style="margin-top:.9rem">Avez-vous déjà un faire-part imprimé ? Si oui, envoyez-nous sa photo pour que tout soit cohérent.</p>
+  <div class="opts" data-name="faire-part" data-single="1">
+  <label><input type="checkbox" value="Oui"><span>Oui</span></label>
+  <label><input type="checkbox" value="Non"><span>Non</span></label>
+  <label><input type="checkbox" value="Pas encore"><span>Pas encore</span></label></div></fieldset>
+
+<fieldset><span class="q">5. La journée : date, programme et lieu</span>
+  <p class="help">La date, puis les moments de la journée avec leur heure : accueil, dot, repas, mairie, église, soirée, fin…</p>
+  <textarea id="programme" placeholder="Ex : Samedi 20 mars. 10h accueil, 11h dot, 12h repas, 14h mairie, 17h fin."></textarea>
+  <p class="help" style="margin-top:.8rem">Le lieu. Donnez le nom exact et la ville, nous affichons la carte Google Maps et le bouton « Itinéraire » :</p>
+  <input type="text" id="lieu" placeholder="Ex : Salle des Fêtes Les Jardins, Cocody, Abidjan">
+  <p class="help" style="margin-top:.8rem">Tout se passe-t-il au même endroit ?</p>
+  <div class="opts" data-name="memeLieu" data-single="1">
+  <label><input type="checkbox" value="Oui, un seul lieu"><span>Oui, un seul lieu</span></label>
+  <label><input type="checkbox" value="Non, plusieurs lieux (à préciser ci-dessus)"><span>Non, plusieurs lieux</span></label></div></fieldset>
+
+<fieldset><span class="q">6. Voulez-vous raconter votre histoire ?</span>
+  <div class="opts" data-name="histoire" data-single="1">
+  <label><input type="checkbox" value="Oui, en détail"><span>Oui, en détail</span></label>
+  <label><input type="checkbox" value="Juste quelques lignes"><span>Quelques lignes</span></label>
+  <label><input type="checkbox" value="Non, l'essentiel seulement"><span>Non, l'essentiel</span></label></div>
+  <p class="help" style="margin-top:.8rem">Écrivez ici ce que vous voulez qu'on mette, ou quelques détails (comment vous vous êtes rencontrés, une date importante, une phrase qui vous tient à cœur) :</p>
+  <textarea id="histoireLibre" placeholder="Ex : Nous nous sommes rencontrés en 2019 à l'université…"></textarea></fieldset>
+
+<fieldset><span class="q">7. Comment vos invités confirment-ils ?</span>
+  <div class="opts" data-name="confirmation" data-single="1">
+  <label><input type="checkbox" value="WhatsApp"><span>WhatsApp</span></label>
+  <label><input type="checkbox" value="Appel"><span>Appel</span></label>
+  <label><input type="checkbox" value="Formulaire"><span>Formulaire</span></label></div>
+  <p class="help" style="margin-top:.7rem">Numéro à utiliser :</p><input type="tel" id="tel" placeholder="+225 ...">
+  <p class="help" style="margin-top:.7rem">Date limite pour confirmer :</p><input type="date" id="dateLimite"></fieldset>
+
+<fieldset><span class="q">8. Une musique de fond ?</span><p class="help">Une douce musique peut accompagner la visite du site. L'invité peut la couper à tout moment.</p>
+  <div class="opts" data-name="musique" data-single="1">
+  <label><input type="checkbox" value="Oui, une musique de fond"><span>Oui</span></label>
+  <label><input type="checkbox" value="Non, sans musique"><span>Non</span></label>
+  <label><input type="checkbox" value="À choisir ensemble"><span>À choisir ensemble</span></label></div>
+  <p class="help" style="margin-top:.8rem">Un style ou un titre en tête ? (nous vérifions que la musique est libre de droits)</p>
+  <input type="text" id="musiqueLibre" placeholder="Ex : douce, instrumentale, gospel…"></fieldset>
+
+<fieldset><span class="q">9. Un lien personnalisé pour chaque invité ?</span><p class="help">Chacun voit son nom sur la couverture, par exemple « Mme Kouassi », et son nom est pré-rempli dans sa confirmation. Envoyez-nous ensuite la liste des noms sur WhatsApp.</p>
+  <div class="opts" data-name="liens" data-single="1">
+  <label><input type="checkbox" value="Oui, un lien par invité"><span>Oui</span></label>
+  <label><input type="checkbox" value="Non, un seul lien pour tous"><span>Non, un seul lien</span></label></div></fieldset>
+
+<fieldset><span class="q">10. Voulez-vous recevoir des dons ou cadeaux ?</span><p class="help">Option : nous ajoutons une section dédiée au site.</p>
+  <div class="opts" data-name="dons" data-single="1">
+  <label><input type="checkbox" value="Numéro Mobile Money"><span>Mobile Money</span></label>
+  <label><input type="checkbox" value="Liste de cadeaux"><span>Liste de cadeaux</span></label>
+  <label><input type="checkbox" value="Non"><span>Non</span></label></div>
+  <p class="help" style="margin-top:.8rem">Si Mobile Money : l'opérateur, le numéro et le nom du titulaire.</p>
+  <input type="text" id="donsDetail" placeholder="Ex : Orange Money, 07 00 00 00 00, au nom de Awa K."></fieldset>
+
+<fieldset><span class="q">11. Combien d'invités environ ?</span><p class="help">Si certains sont âgés, nous gardons le site très simple à lire.</p>
+  <select id="invites"><option value="">Choisir</option><option>Moins de 50</option><option>50 à 150</option><option>150 à 300</option><option>Plus de 300</option></select></fieldset>
+
+<fieldset><span class="q">12. Pour quand en avez-vous besoin ?</span><p class="help">Date où vous voulez envoyer les invitations.</p>
+  <input type="date" id="delai">
+  <p class="help" style="margin-top:.9rem">Autre chose qui compte pour vous (une idée vue ailleurs, un souhait particulier…) :</p>
+  <textarea id="autre"></textarea></fieldset>
+
+<button type="submit">Envoyer mes réponses sur WhatsApp</button>
+<button type="button" class="ghost" id="copy">Copier mes réponses</button>
+<p class="note">Vos réponses s'ouvrent dans WhatsApp, prêtes à envoyer. Rien n'est enregistré ailleurs.</p>
+</form>
+</div>
+
+<script>
+// >>> Mets TON numéro WhatsApp ici (indicatif, sans + ni espaces)
+const MON_NUMERO = "2250757887372";
+
+const f = document.getElementById("f"), bar = document.getElementById("bar");
+const val = id => (document.getElementById(id).value || "").trim() || "—";
+const opts = n => { const c=[...document.querySelectorAll(`[data-name="${n}"] input:checked`)].map(i=>i.value); return c.length?c.join(", "):"—"; };
+
+// assemble deux réponses sans afficher de « — » en double
+const duo = (a, b, sep) => [a, b].filter(s => s !== "—").join(sep) || "—";
+
+// un seul choix pour les questions "single"
+document.querySelectorAll("[data-single] input").forEach(i => i.addEventListener("change", () => {
+  if (i.checked) i.closest("[data-single]").querySelectorAll("input").forEach(o => { if (o!==i) o.checked=false; });
+}));
+
+// barre de progression
+function progress(){
+  const f1 = [...document.querySelectorAll("fieldset")];
+  const done = f1.filter(fs => [...fs.querySelectorAll("input,textarea,select")].some(e => e.type==="checkbox" ? e.checked : e.value.trim())).length;
+  bar.style.width = (done/f1.length*100)+"%";
+}
+f.addEventListener("input", progress); f.addEventListener("change", progress);
+
+function message(){
+  return [
+    "Bonjour DELYART, voici mes réponses pour mon invitation de mariage :",
+    "1. Prénoms : " + val("p1") + " & " + val("p2"),
+    "2. Style : " + opts("style"),
+    "   Mes mots : " + val("styleLibre"),
+    "3. Couleurs : " + val("couleurs"),
+    "   Tenue : " + val("tenue"),
+    "4. Photo du couple : " + opts("photo"),
+    "   Faire-part imprimé : " + opts("faire-part"),
+    "5. Date et programme : " + val("programme"),
+    "   Lieu : " + duo(val("lieu"), opts("memeLieu"), " | "),
+    "6. Notre histoire : " + opts("histoire"),
+    "   Ce que je veux qu'on mette : " + val("histoireLibre"),
+    "7. Confirmation : " + duo(opts("confirmation"), val("tel"), " | "),
+    "   Date limite pour confirmer : " + val("dateLimite"),
+    "8. Musique : " + duo(opts("musique"), val("musiqueLibre"), " | "),
+    "9. Lien par invité : " + opts("liens"),
+    "10. Dons / cadeaux : " + duo(opts("dons"), val("donsDetail"), " | "),
+    "11. Invités : " + val("invites"),
+    "12. Besoin pour le : " + val("delai"),
+    "Autre : " + val("autre")
+  ].join("\n");
+}
+f.addEventListener("submit", e => { e.preventDefault(); window.open("https://wa.me/"+MON_NUMERO+"?text="+encodeURIComponent(message()), "_blank"); });
+document.getElementById("copy").addEventListener("click", async () => {
+  const b = document.getElementById("copy");
+  try { await navigator.clipboard.writeText(message()); b.textContent = "Copié ✓"; } catch(_) { b.textContent = "Copie impossible, utilise WhatsApp"; }
+  setTimeout(()=>b.textContent="Copier mes réponses",2000);
+});
+</script>
+</body>
+</html>
